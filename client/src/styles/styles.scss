@@ -1,0 +1,24 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins";
+}
+
+@mixin flex() {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+$primaryBlue: blue;
+
+@import "../pages/auth/Login-Signup.scss";
+
+@import "../pages/gun/AddGun";
+@import "../pages/gun/Gun";
+
+@import "../pages/Home";
+
+@import "../Components/Reload";
+
+@import "../Components/Navbar";

@@ -1,0 +1,24 @@
+{
+  "name": "goosefuncs",
+  "version": "2.2.0",
+  "description": "a file which shows the current date and time",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bengraham-B/gooseFuncs2.git"
+  },
+  "keywords": [
+    "goose",
+    "funcs",
+    "dateString"
+  ],
+  "author": "GOOSE_CPT",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bengraham-B/gooseFuncs2/issues"
+  },
+  "homepage": "https://github.com/bengraham-B/gooseFuncs2#readme"
+}
