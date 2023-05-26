@@ -21,17 +21,21 @@ export default function Reload(props) {
     const [casingMakeEdit, setCasingMakeEdit] = useState()
     const [primerMakeEdit, setPrimerMakeEdit] = useState()
 
+	const [token, setToken] = useState()
+
+
   
 
 
     //^ Handles the delete function of CRUD operations.
-    const handleDelete = async (id) => {
+    const handleDelete = async (id, token) => {
 
         const response = await fetch("http://localhost:8001/api/reload", {
             method: "DELETE",
             body: JSON.stringify({ id: id }),
             headers: {
-                "Content-Type": "application/json"
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${token}`
             }
         })
 
@@ -41,9 +45,11 @@ export default function Reload(props) {
         console.log(data)
 
     }
+
+
    
     //^ Handles the Edit function of CRUD operations.
-    const saveEdit = async (id) => {
+    const saveEdit = async (id, token) => {
         setEdit(false)
         console.log(bulletHeadMakeEdit, id)
 
@@ -66,13 +72,15 @@ export default function Reload(props) {
                 }
              ),
             headers: {
-                "Content-Type": "application/json"
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${token}`
             }
         })
 
         const data = await response.json()
 
         console.log(data)
+        dispatch(refreshCount())
         
     }
     
@@ -123,8 +131,8 @@ export default function Reload(props) {
         </div>
 
         <div className="button-container">
-            {edit ? <button onClick={() => saveEdit(props._id)}>Save Edit</button> : <button onClick={() => handleEdit(props._id)}>Edit</button>}
-            {edit ? <button className="cancel-button" onClick={cancelEdit}>Cancel</button> : <button onClick={() => handleDelete(props._id)}>Delete</button>}        </div>
+            {edit ? <button onClick={() => saveEdit(props._id, props.token)}>Save Edit</button> : <button onClick={() => handleEdit(props._id)}>Edit</button>}
+            {edit ? <button className="cancel-button" onClick={cancelEdit}>Cancel</button> : <button onClick={() => handleDelete(props._id, props.token)}>Delete</button>}        </div>
      
     </div>
   )

@@ -20,39 +20,59 @@ export default function AddGun() {
 	const [casingMake, setCasingMake] = useState()
 	const [primerMake, setPrimerMake] = useState()
 
+	const [token, setToken] = useState()
+
+
 	//^ This is the function when clicked will send all the data stored in the state variables to the server
 	const handleHandgunSubmit = async () => {
 		console.log("Pre post")
 
 		//^ Try catch block, will try to connect to the server and submit the user inputed data.
 		try {
-			const response = await fetch('http://localhost:8001/api/reload', {
-				method: "POST",
-				headers: {
-					"Content-Type": "application/json"
-				},
-				body: JSON.stringify({
-					user_title: userTitle,
-	
-					bullet_head_make: bulletHeadMake,
-					bullet_head_type: bulletHeadType,
-					bullet_weight: bulletWeight,
-	
-					powder_make: powderMake,
-					powder_type: powderType,
-					powder_weight: powderWeight,
-	
-					casing_make: casingMake,
-	
-					primer_make: primerMake,
+
+			async function postReload(token){
+				const response = await fetch('http://localhost:8001/api/reload', {
+					method: "POST",
+					headers: {
+						"Content-Type": "application/json",
+						"Authorization": `Bearer ${token}`
+					},
+					body: JSON.stringify({
+						user_title: userTitle,
+		
+						bullet_head_make: bulletHeadMake,
+						bullet_head_type: bulletHeadType,
+						bullet_weight: bulletWeight,
+		
+						powder_make: powderMake,
+						powder_type: powderType,
+						powder_weight: powderWeight,
+		
+						casing_make: casingMake,
+		
+						primer_make: primerMake,
+					})
 				})
-			})
-	
-			const data = await response.json()
+
+				const data = await response.json()
+				console.log(data)
+
+			}
+			
+			const userJWT = JSON.parse(localStorage.getItem('goose-reloaded-user'))
+			setToken(userJWT)
+
+
+			// console.log(data)
+			if(localStorage.getItem('goose-reloaded-user')){
+				const userToken = userJWT.token
+				postReload(userToken)
+
+			}
 
 			dispatch(refreshCount)
 
-			console.log(data)
+
 			console.log("Post POST")
 		}
 

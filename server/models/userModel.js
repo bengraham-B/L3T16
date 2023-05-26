@@ -10,6 +10,11 @@ const userSchema = new Schema ({
         required: true,
         unique: true
     },
+    //^ when users sign up their admin status is set to default.
+    admin: {
+        type: Boolean,
+        default: false
+    },
     password: {
         type: String,
         required: true

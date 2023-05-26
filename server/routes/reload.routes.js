@@ -4,7 +4,12 @@ const express = require('express')
 //^ The router will be exported to the reload.routes.js file.
 const {get_all_reloads, get_a_reload, put_reload, post_reload, delete_reload} = require('../controllers/reloadController')
 
+const requireAuth  =require("../middleware/requireAuth") //^ importing the requireAuth function
+
 const router = express.Router()
+
+router.use(requireAuth)
+
 
 router.get('/', get_all_reloads)
 
