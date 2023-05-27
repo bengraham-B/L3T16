@@ -9,6 +9,7 @@ export default function Navbar() {
 	console.log(user)
 
 	const [userName, setUserName] = useState()
+	const [admin, setAdmin] = useState()
 
 	const dispatch = useDispatch()
 
@@ -27,6 +28,14 @@ export default function Navbar() {
 		if(localStorage.getItem("goose-reloaded-user")){
 			const object = JSON.parse(localStorage.getItem("goose-reloaded-user"))
 			setUserName(object.email)
+
+			//^ checking if the user is an admin
+			if(object.admin){
+				setAdmin("Admin")
+			} else {
+				setAdmin("")
+			}
+			
 		} else {
 			setUserName("")
 		}
@@ -43,12 +52,14 @@ export default function Navbar() {
 
 			<div className="title-container">
 				<h1>GOOSE_RELOADED</h1>
+				{/* If the user is an admin will display, it will display admin under the title. */}
+				<h3>{admin}</h3>
 			</div>
 
 			<div className="auth-container">
 				{user ? 
 					<div className='button-conatiner'>
-						<h3>{userName}</h3> 
+						<h3>{userName} </h3> 
 						<button onClick={handleLogout}>Logout</button>
 					</div> 
 					:

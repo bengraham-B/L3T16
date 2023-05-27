@@ -12,13 +12,16 @@
 
 $primaryBlue: blue;
 
+//& Signup Login Styles
 @import "../pages/auth/Login-Signup.scss";
 
+//& Pages styles
 @import "../pages/gun/AddGun";
 @import "../pages/gun/Gun";
-
 @import "../pages/Home";
+@import "../pages/UserPage";
 
+//& Componet Styles
 @import "../Components/Reload";
-
 @import "../Components/Navbar";
+@import "../Components/UserComp";

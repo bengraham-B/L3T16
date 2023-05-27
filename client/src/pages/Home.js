@@ -5,6 +5,8 @@ export default function Home() {
 	//^ This state is used to set the total number of reloads the user has
 	const [allReloads, setAllReloads] = useState([])
 	const [token, setToken] = useState()
+	const [permissions, setPermissions] = useState()
+	const [admin, setAdmin] = useState() //^ Stores the user's admin status
 
 	useEffect(() => {
 
@@ -28,8 +30,14 @@ export default function Home() {
 			const userToken = userJWT.token
 			getUserReloadsAmount(userToken)
 
+			const object = JSON.parse(localStorage.getItem("goose-reloaded-user"))
+			setAdmin(object.admin) //^ Saves the user's admin status to state.
+			setPermissions(object.permissions)
+			console.log(object.permissions)
+
 		}
 
+		
 	},[])
   return (
     <div id="HomePage">
@@ -49,6 +57,23 @@ export default function Home() {
 						<Link to="/gun/gun">Add Reload</Link>
 					</button>
 				</div>
+
+				{/* 
+					If the user is an admin, they can access this page where they can 
+					edit user's permissions.
+				 */}
+				{admin ?
+					<div className="container handgun">
+						<h3>User</h3>
+						<button>
+							<Link to="/user">Users</Link>
+						</button>
+					</div>
+				:
+					<></>
+					// If the user is not an admin, their home page will recieve an empty fragment.
+				}
+				
 			</div>
 		</dvi>
     </div>

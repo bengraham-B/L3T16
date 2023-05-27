@@ -1,13 +1,7 @@
-//^ All the controller functions are stored in their own file and then import into this file.
-//^ These files will be exported to the reloadController.js file
 
-// const {get_all_reloads} = require("./RELOADS/functions/GET_ALL_RELOADS")
-// const {get_a_reload} = require("./RELOADS/functions/GET_A_RELOAD")
-// const {put_reload} = require("./RELOADS/functions/PUT_RELOAD")
-// const {post_reload} = require("./RELOADS/functions/POST_RELOAD")
-// const {delete_reload} = require("./RELOADS/functions/DELETE_RELOAD")
 
 const Reload = require("../models/reloadModel") //^ Importing the Reload Model
+
 
 
 //* DELTE A Reload
@@ -37,11 +31,24 @@ const get_a_reload = async (req, res) => {
 //TODO frontend
 
 const get_all_reloads = async (req, res) => {
-    const user_id = req.user._id
-    //^ Will get the reloads assigned to the user's id
-    const reload = await Reload.find({user_id})
+    const user_id = req.user._id //^ retives the id property from the user object (JWT)
+    const admin = req.user.admin //^ retives the admin property from the user object (JWT)
+    
 
-    res.status(200).json(reload)
+    //^ If the user is not an admin, they will be only able to see their reloads
+    if(!admin){
+        //^ Will get the reloads assigned to the user's id
+        const reload = await Reload.find({user_id})
+        res.status(200).json(reload)
+    }
+
+    //^ If the user is an admin they will be able to see everyone's reloads
+    else {
+        //^ Will get all reloads in the database
+        const reload = await Reload.find({})
+        res.status(200).json(reload)
+    }
+
 }
 
 //* POST a reload
@@ -50,8 +57,12 @@ const get_all_reloads = async (req, res) => {
 const post_reload =  async (req, res) => {
 
     const id = req.user._id
+    const email = req.user.email
+
+    console.log(req.user.email, "fffffffffjfjfjfjfjfj")
    
     const reload_post = await Reload.create({ 
+        user_email: email,
         user_title: req.body.user_title,
         bullet_head_make: req.body.bullet_head_make,
         bullet_head_type: req.body.bullet_head_type,

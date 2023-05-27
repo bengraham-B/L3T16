@@ -19,6 +19,17 @@
         margin: 10px;
         color: $primaryBlue;
 
+        .email-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+
+            width: 100%;
+
+            color: orange;
+        }
+
         h3 {
             margin-top:20px;
         }

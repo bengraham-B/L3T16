@@ -7,6 +7,8 @@ export default function AddGun() {
 
 	const dispatch = useDispatch()
 
+	const [userEmail, setUserEmail] = useState()
+
 	const [userTitle, setUserTitle] = useState()
 
 	const [bulletHeadMake, setBulletHeadMake] = useState()
@@ -20,7 +22,7 @@ export default function AddGun() {
 	const [casingMake, setCasingMake] = useState()
 	const [primerMake, setPrimerMake] = useState()
 
-	const [token, setToken] = useState()
+	const [token, setToken] = useState() //^ state which will be used to store JWT from local storage
 
 
 	//^ This is the function when clicked will send all the data stored in the state variables to the server
@@ -31,6 +33,12 @@ export default function AddGun() {
 		try {
 
 			async function postReload(token){
+
+				if(localStorage.getItem("goose-reloaded-user")){
+					const object = JSON.parse(localStorage.getItem("goose-reloaded-user"))
+					setUserEmail(object.email)
+					console.log(object.email)
+				} 
 				const response = await fetch('http://localhost:8001/api/reload', {
 					method: "POST",
 					headers: {
@@ -38,6 +46,7 @@ export default function AddGun() {
 						"Authorization": `Bearer ${token}`
 					},
 					body: JSON.stringify({
+						user_email: userEmail,
 						user_title: userTitle,
 		
 						bullet_head_make: bulletHeadMake,

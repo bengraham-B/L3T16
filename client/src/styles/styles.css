@@ -297,6 +297,15 @@
   color: white;
 }
 
+.user-container {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
 #Reload-Component {
   width: 350px;
   min-height: 500px;
@@ -315,6 +324,13 @@
   flex-direction: column;
   margin: 10px;
   color: blue;
+}
+#Reload-Component .rc-title-container .email-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  color: orange;
 }
 #Reload-Component .rc-title-container h3 {
   margin-top: 20px;
@@ -411,6 +427,7 @@
 #Navbar .title-container {
   width: inherit;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
@@ -448,4 +465,73 @@
 #Navbar .auth-container .button-conatiner .unauthed-user a {
   text-decoration: none;
   color: white;
+}
+
+#User-Comp {
+  width: 1200px;
+  height: 100px;
+  box-shadow: 1px 1px 3px 1px blue;
+  margin: 20px;
+  padding: 10px;
+}
+#User-Comp div {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 100%;
+}
+#User-Comp div .title-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100px;
+}
+#User-Comp div .title-container h2 {
+  color: blue;
+}
+#User-Comp div .title-container h3 {
+  color: orange;
+}
+#User-Comp div .button-container {
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+#User-Comp div .button-container button {
+  margin: 20px;
+  padding: 10px;
+  background: inherit;
+  border: 1px solid blue;
+  font-size: 17px;
+}
+#User-Comp div .button-container button:hover {
+  background: blue;
+  color: white;
+}
+
+#User-Comp-current-user {
+  width: 1200px;
+  height: 100px;
+  margin: 20px;
+  padding: 10px;
+  box-shadow: 1px 1px 3px 1px orange;
+}
+#User-Comp-current-user div {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 100%;
+}
+#User-Comp-current-user div .title-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100px;
+}
+#User-Comp-current-user div .title-container h2 {
+  color: blue;
+}
+#User-Comp-current-user div .title-container h3 {
+  color: orange;
 }/*# sourceMappingURL=styles.css.map */

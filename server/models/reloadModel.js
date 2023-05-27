@@ -5,6 +5,7 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 const reloadSchema = new Schema({
+    user_email:{ type: String, required: false},
     user_title: { type: String,required: false },
 
     bullet_head_make: {type: String,required: false },

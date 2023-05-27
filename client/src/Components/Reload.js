@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 
-import { useDispatch, useSelector } from 'react-redux'
-import { authStatus, logoutRedux, loginRedux, signupRedux, refreshCount } from '../store/redux'
+import { useDispatch } from 'react-redux'
+import { refreshCount } from '../store/redux'
 
 export default function Reload(props) {
     const dispatch = useDispatch()
@@ -21,7 +21,7 @@ export default function Reload(props) {
     const [casingMakeEdit, setCasingMakeEdit] = useState()
     const [primerMakeEdit, setPrimerMakeEdit] = useState()
 
-	const [token, setToken] = useState()
+	const [token, setToken] = useState() //^ state which will be used to store JWT from local storage
 
 
   
@@ -85,11 +85,11 @@ export default function Reload(props) {
     }
     
     const handleEdit = () => {
-        setEdit(true)
+        setEdit(true) //^ sets the state of edit to true to chanhes the headings to inputs
     }
 
     const cancelEdit = () => {
-        setEdit(false)
+        setEdit(false) //^ changes inputs back to headings
     }
 
  
@@ -99,6 +99,10 @@ export default function Reload(props) {
 
        
         <div className="rc-title-container">
+            <div className="email-container">
+            <h2>{props.user_email}</h2>
+            </div>
+
            {edit ? <input className="user-title-input" onChange={(e) => setUserTitle(e.target.value)} placeholder={props.user_title} type="text" /> : <h2>{props.user_title}</h2>}
             <h3>9mm</h3>
         </div>

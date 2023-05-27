@@ -15,6 +15,11 @@ const userSchema = new Schema ({
         type: Boolean,
         default: false
     },
+    //^ By default every user will have access to all CRUD functions
+    permissions: {
+        type: Boolean,
+        required: true
+    },
     password: {
         type: String,
         required: true
@@ -82,7 +87,11 @@ userSchema.statics.signup = async function(email, password){
     const hash = await bcrypt.hash(password, salt)
 
     //^ Storing the new user in the DB with their email hashed password
-    const user = await this.create({ email: email, password: hash})
+    const user = await this.create({ 
+        email: email, 
+        password: hash,
+        permissions: true
+    })
 
     return user //^ If the user's email is registered it will be returned, which will then be used to authenicate the user with JWT
 }
