@@ -19,6 +19,7 @@ describe("POST Reload", () => {
                 email: "test@gmail.com"
             },
 
+            //^ Body of the reload which will be used in the test.
             body: {
                 user_title: "9mm Reload",
                 bullet_head_make: "Hornady",
@@ -38,6 +39,7 @@ describe("POST Reload", () => {
             json: jest.fn()
         }
 
+        //^ Extracting the data from the body create above
         const reload = {
             _id: "reload_id",
             user_email: req.user.email,
@@ -71,7 +73,7 @@ describe("POST Reload", () => {
             user_id: req.user._id,
           });
       
-          expect(res.status).toHaveBeenCalledWith(200);
+          expect(res.status).toHaveBeenCalledWith(200); //^ The test will be successful if status is 200.
           expect(res.json).toHaveBeenCalledWith(reload);
     })
 })
