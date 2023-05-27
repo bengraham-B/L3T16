@@ -1,70 +1,63 @@
-# Getting Started with Create React App
+# `GOOSE_RELOADED`
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## How to user the App
+GOOSE_RELOADED is a website which allows users to save data regarding their reload parameters.
 
-## Available Scripts
+Firstly a user will need to login or signup, where they will be directed to the home page which shows their total reloads and a button which will allow them to to go to their relad page. 
 
-In the project directory, you can run:
+On the reload page is the total amount of reloads the user has and the button to add more a new reload. The reload button will navigate the user to a form, in which they can input their reloading data.
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## To run the app on your local machine
+### To run the fontend
+```
+npm start
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### To start the express server, navigate to the server folder
+```
+cd server
+npm start
+```
 
-### `npm test`
+---
+## Security measures
+Helmet.js has been used on the server side to add an extra layer of protection.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+With regard to storing user's passwords, they are hashed using the bycrpt libary, which will ensure in the case of a data beach, user's will have enough time to change their passwords.
 
-### `npm run build`
+---
+## Backend Deployment
+The back end has been deployed along side the frontend on to vercel.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+This will allow for a siple deployment, it will have imporved preformance as there will be less latency when users make requests to the server, due to data traveling with in the server oppsed to over the internet and the front and backend can communicate direclty with each other as they do not need to go through API's or external networks.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+___
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Admin user
+user name: adminuser@gmail.com
 
-### `npm run eject`
+password: #Workz123
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+This will allow you to see the admin access of the application
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Normal user
+user name: normaluser@gmail.com
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+password: Mhip178!
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+___
 
-## Learn More
+## Links
+Github: https://github.com/bengraham-B/L3T16
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Vercel: https://l3-t16.vercel.app/auth/login
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Postman: https://www.postman.com/dark-astronaut-547911/workspace/hyperiondev-level-3/collection/26299671-80d66138-73e3-45ba-9e3f-05a65bf3e88f
 
-### Code Splitting
+___
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## MongoDB
+The databse is GOOSE_RELOADED
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

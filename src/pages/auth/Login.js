@@ -23,10 +23,7 @@ export default function Login() {
                 }
             })
 
-            console.log("frrrr")
-
             const data = await response.json()
-            console.log(data)
 
             //^ If their is an error loggin the user it will be set to Error state and then displayed on the screen.
             if(data.error){
@@ -41,9 +38,7 @@ export default function Login() {
         }
 
         catch(error){
-
             setError("Caanot connect to server")
-
         }
     }
 

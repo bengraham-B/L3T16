@@ -37,9 +37,7 @@ export default function Signup() {
         }
 
         catch(error){
-
             setError("Caanot connect to server")
-
         }
     }
 

@@ -22,15 +22,12 @@ export default function Home() {
 		}
 		const userJWT = JSON.parse(localStorage.getItem('goose-reloaded-user'))
 
-
-		// console.log(data)
 		if(localStorage.getItem('goose-reloaded-user')){
 			const userToken = userJWT.token
 			getUserReloadsAmount(userToken)
 
 			const object = JSON.parse(localStorage.getItem("goose-reloaded-user"))
 			setAdmin(object.admin) //^ Saves the user's admin status to state.
-
 		}
 
 		

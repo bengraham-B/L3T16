@@ -1,6 +1,7 @@
 //^ This the MongoDB which will be used to handle user in MongoDB
 const mongoose = require('mongoose')
 const bcrypt = require('bcrypt')
+const validator = require('validator')
 
 const Schema = mongoose.Schema
 
@@ -62,6 +63,16 @@ userSchema.statics.signup = async function(email, password){
         //^ If the user did not enter an email
         if(!email){
             throw Error("Please Enter an email address")
+        }
+
+        //^ Uses the validtor libary to ensure the email the user inputed is valid
+        if(!validator.isEmail(email)){
+            throw Error("Not valid email")
+        }
+
+        //^ Uses the validtor libary to ensure the password the user inputed is strong enough
+        if(!validator.isStrongPassword(password)){
+            throw Error("Not sotrongh enough password")
         }
 
         //^ If the user did not enter an password

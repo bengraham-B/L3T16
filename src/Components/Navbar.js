@@ -8,17 +8,19 @@ export default function Navbar() {
 	const user = useSelector((state) => state.redux.userAuthStatus)
 
 
-	const [userName, setUserName] = useState()
-	const [admin, setAdmin] = useState()
+	const [userName, setUserName] = useState() //^ Used to get and display the user name next to the logout button
+	const [admin, setAdmin] = useState() //^ Gets the user's admin status.
+	const [userAuth, setUserAuth] = useState() //^ Stores the state reharding if the user is authenticated or not
 
 	const dispatch = useDispatch()
 
 	const handleLogout = () => {
-		dispatch(logoutRedux())
-		dispatch(authStatus())
+		//~ Dispatching the REDUX functions when the user logs out
+		dispatch(logoutRedux()) //~ Handles loggin out the user
+		dispatch(authStatus()) //~ Updating the state in redux when the user logins or out. Set to false.
 	}
 
-	dispatch(authStatus())
+	dispatch(authStatus()) //~ Updating the state in redux when the user logins or out. Set to true.
 
 
 	
@@ -28,6 +30,7 @@ export default function Navbar() {
 		if(localStorage.getItem("goose-reloaded-user")){
 			const object = JSON.parse(localStorage.getItem("goose-reloaded-user"))
 			setUserName(object.email)
+			setUserAuth(true) //^ If user is not authenticated
 
 			//^ checking if the user is an admin
 			if(object.admin){
@@ -38,17 +41,27 @@ export default function Navbar() {
 			
 		} else {
 			setUserName("")
+			setUserAuth(false) //^ If user is not authenticated
 		}
 
 	}, [])
 
 	return (
 		<div id="Navbar">
+
+			{userAuth ? 
+			//^ If the user os authenticated they will see the 'Home' link
 			<div className="home-container">
 				<Link to="/">
 					<h2>Home</h2>
 				</Link>
 			</div>
+			: 
+			//^ If the user is not authenticated they will not see the 'Home' link
+			<div className="home-container">
+				
+			</div>
+			}
 
 			<div className="title-container">
 				<h1>GOOSE_RELOADED</h1>
@@ -73,8 +86,7 @@ export default function Navbar() {
 
 					</div>
 
-					
-					}
+				}
 				
 			</div>
 		</div>

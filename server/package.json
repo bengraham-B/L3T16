@@ -24,6 +24,7 @@
     "nodemon": "^2.0.22",
     "react-redux": "^8.0.5",
     "redux": "^4.2.1",
-    "supertest": "^6.3.3"
+    "supertest": "^6.3.3",
+    "validator": "^13.9.0"
   }
 }

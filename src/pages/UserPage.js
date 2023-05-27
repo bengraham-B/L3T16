@@ -9,10 +9,8 @@ export default function UserPage() {
     const refreshCountValue = useSelector((state) => state.redux.refreshCountValue)
 
 	const [token, setToken] = useState() //^ state which will be used to store JWT from local storage.
-
     const [userBlock, setUserBlock] = useState() //^ This will be used to store all the user's info from the DB.
 
-    
     useEffect(() => {
 
         //^ This gets all the users from the data base
