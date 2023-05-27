@@ -41,6 +41,8 @@ export default function Home() {
 	},[])
   return (
     <div id="HomePage">
+
+		
 		<div className="header">Home</div>
 
 		<dvi className="comp-container">

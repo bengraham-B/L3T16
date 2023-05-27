@@ -17,9 +17,9 @@ const loginUser = async (req, res) => {
         //^ Creates the JWT Token
         const token = createToken(user._id)
 
-       const admin = user.admin
-       const permissions = user.permissions
-
+        //^ Getting the admin and permissions from the user object, which will be stored in the JWT.
+        const admin = user.admin
+        const permissions = user.permissions
 
         res.status(200).json({email, token, admin, permissions})
     }
@@ -36,9 +36,9 @@ const signupUser = async (req, res) => {
     try {
         const user = await User.signup(email, password)
 
-        // const admin = User.find({email}).select('admin')
+        //^ Getting the admin and permissions from the user object, which will be stored in the JWT.
         const admin = user.admin
-       const permissions = user.permissions
+        const permissions = user.permissions
 
         //^ Creates the JWT Token
         const token = createToken(user._id)
