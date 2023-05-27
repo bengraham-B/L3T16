@@ -1,5 +1,6 @@
 require('dotenv').config() //^ Setting up enviroment variables
 const express = require('express')
+const helmet = require('helmet')
 const {cl, dateString} = require('goosefuncs') //^ npm package, the cl() is a function for console.log and dateString() prints the current dtae and time.
 const cors = require('cors') //^ This module will allow for Cross Origin Resource Sharing
 const mongoose = require('mongoose')
@@ -13,6 +14,7 @@ const app = express()
 //^ Setting up middileware
 app.use(cors()) //^ This module will allow for Cross Origin Resource Sharing
 app.use(express.json())
+app.use(helmet()) //^ Added Helmet.js which will help secure my application.
 
 //^ Setting up Routes
 app.use('/api/reload', reloadRoutes)

@@ -6,7 +6,7 @@ import { authStatus, logoutRedux } from '../store/redux'
 
 export default function Navbar() {
 	const user = useSelector((state) => state.redux.userAuthStatus)
-	console.log(user)
+
 
 	const [userName, setUserName] = useState()
 	const [admin, setAdmin] = useState()
@@ -19,7 +19,7 @@ export default function Navbar() {
 	}
 
 	dispatch(authStatus())
-	console.log(user)
+
 
 	
 

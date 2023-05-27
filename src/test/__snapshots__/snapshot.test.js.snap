@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders Navbar correctly 1`] = `
+<div>
+  <div
+    id="Navbar"
+  >
+    <div
+      class="home-container"
+    >
+      <a
+        href="/"
+      >
+        <h2>
+          Home
+        </h2>
+      </a>
+    </div>
+    <div
+      class="title-container"
+    >
+      <h1>
+        GOOSE_RELOADED
+      </h1>
+      <h3 />
+    </div>
+    <div
+      class="auth-container"
+    >
+      <div
+        class="button-conatiner"
+      >
+        <button
+          class="unauthed-user"
+        >
+          <a
+            href="/auth/login"
+          >
+            Login
+          </a>
+        </button>
+        <button
+          class="unauthed-user"
+        >
+          <a
+            href="/auth/signup"
+          >
+            Signup
+          </a>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
