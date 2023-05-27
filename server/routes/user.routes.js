@@ -1,9 +1,8 @@
+/*
+* These routes will handle all the controllers for interactions with the User model
+*/
 const express = require('express')
 const { signupUser, loginUser, getUsers, editUser } = require("../controllers/userController")
-
-
-
-
 
 const router = express.Router()
 

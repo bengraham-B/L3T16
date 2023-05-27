@@ -1,23 +1,13 @@
-
-
 const Reload = require("../models/reloadModel") //^ Importing the Reload Model
 
-
-
 //* DELTE A Reload
-//TODO Frontend
-
 const delete_reload =  async (req, res) => {
     const {id} = req.body
-    console.log(id)
     const reload = await Reload.findByIdAndDelete({_id: id})
-
     res.status(200).json(reload)
 }
 
 //* Get A Reload
-//TODO frontend
-
 const get_a_reload = async (req, res) => {
     const {id} = req.params
     console.log(id)
@@ -28,13 +18,10 @@ const get_a_reload = async (req, res) => {
 }
 
 //* Get All reloads
-//TODO frontend
-
 const get_all_reloads = async (req, res) => {
     const user_id = req.user._id //^ retives the id property from the user object (JWT)
     const admin = req.user.admin //^ retives the admin property from the user object (JWT)
     
-
     //^ If the user is not an admin, they will be only able to see their reloads
     if(!admin){
         //^ Will get the reloads assigned to the user's id
@@ -52,10 +39,7 @@ const get_all_reloads = async (req, res) => {
 }
 
 //* POST a reload
-//TODO frontend
-
 const post_reload =  async (req, res) => {
-
     const id = req.user._id
     const email = req.user.email
 
@@ -83,8 +67,6 @@ const post_reload =  async (req, res) => {
 }
 
 //* PUT a reload
-//TODO frontend
-
 const put_reload =  async (req, res) => {
 
     try { 

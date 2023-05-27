@@ -2,8 +2,8 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 
-import { useDispatch, useSelector } from 'react-redux'
-import { authStatus, logoutRedux, loginRedux, signupRedux, refreshCount } from '../../store/redux'
+import { useSelector } from 'react-redux'
+
 
 //^ Importing Reload component which display all the reload data
 import Reload from '../../Components/Reload'
@@ -13,11 +13,7 @@ export default function Handgun() {
 
 	const [admin, setAdmin] = useState()
 
-	const refreshCountValue = useSelector((state) => state.redux.refreshCountValue)
-
-	console.log(refreshCountValue)
-
-	const userAutStatus = useSelector((state) => state.redux.userAuthStatus)
+	const refreshCountValue = useSelector((state) => state.redux.refreshCountValue) //~ Getting the refrsh count state value from REDUX
 
 	const [token, setToken] = useState() //^ state which will be used to store JWT from local storage
 	useEffect(() => {
@@ -32,7 +28,6 @@ export default function Handgun() {
 				}
 			})
 			const data = await response.json()
-			console.log(data)
 			setReloas(data) //^ Setting reloads from the DB to state
 		}
 
@@ -44,7 +39,6 @@ export default function Handgun() {
 			const userToken = userJWT.token
 			const adminJWT = userJWT.admin
 			setAdmin(adminJWT)
-			console.log(admin)
 			fetchAllReloads(userToken)
 		}
 
@@ -71,7 +65,7 @@ export default function Handgun() {
 
 					{admin ? 
 					reloads && reloads.map((rel) => (
-
+						//^ sending all the data from the DB as props to the reload compoent 
 						<Reload 
 							key={rel.id}
 							token={token} //^ using state to pass down the token value to each reload object.
@@ -110,26 +104,6 @@ export default function Handgun() {
 					
 				
 				}
-
-					{/* {reloads && reloads.map((rel) => (
-
-						<Reload 
-							key={rel.id}
-							token={token} //^ using state to pass down the token value to each reload object.
-							_id={rel._id}
-							user_title={rel.user_title}
-							bullet_head_make={rel.bullet_head_make}
-							bullet_head_type={rel.bullet_head_type}
-							bullet_weight={rel.bullet_weight}
-							powder_make={rel.powder_make}
-							powder_type={rel.powder_type}
-							powder_weight={rel.powder_weight}
-							casing_make={rel.casing_make}
-							primer_make={rel.primer_make}
-						/>
-					))} */}
-
-
 				</div>
 
 

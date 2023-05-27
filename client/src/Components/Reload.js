@@ -21,7 +21,6 @@ export default function Reload(props) {
     const [casingMakeEdit, setCasingMakeEdit] = useState()
     const [primerMakeEdit, setPrimerMakeEdit] = useState()
 
-	const [token, setToken] = useState() //^ state which will be used to store JWT from local storage
 
 
   

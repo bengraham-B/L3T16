@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
-import { useDispatch, useSelector } from 'react-redux'
-import { authStatus, logoutRedux, loginRedux, signupRedux, refreshCount } from '../../store/redux'
+import { useDispatch } from 'react-redux'
+import {  refreshCount } from '../../store/redux'
 
 export default function AddGun() {
 
@@ -22,12 +22,11 @@ export default function AddGun() {
 	const [casingMake, setCasingMake] = useState()
 	const [primerMake, setPrimerMake] = useState()
 
-	const [token, setToken] = useState() //^ state which will be used to store JWT from local storage
+
 
 
 	//^ This is the function when clicked will send all the data stored in the state variables to the server
 	const handleHandgunSubmit = async () => {
-		console.log("Pre post")
 
 		//^ Try catch block, will try to connect to the server and submit the user inputed data.
 		try {
@@ -64,25 +63,16 @@ export default function AddGun() {
 				})
 
 				const data = await response.json()
-				console.log(data)
 
 			}
 			
 			const userJWT = JSON.parse(localStorage.getItem('goose-reloaded-user'))
-			setToken(userJWT)
 
-
-			// console.log(data)
 			if(localStorage.getItem('goose-reloaded-user')){
 				const userToken = userJWT.token
 				postReload(userToken)
-
 			}
-
 			dispatch(refreshCount)
-
-
-			console.log("Post POST")
 		}
 
 		//^ The error if the user is unable to connect to the server.
@@ -93,7 +83,7 @@ export default function AddGun() {
 
 	//^ This allows the user to cancel adding a reload and go back to the gun page.
 	const handleCancel = () => {
-		window.location.assign("/gun/gun")
+		window.location.assign("/gun/gun") //^ Takes the user to the Gun.js page when they cancel creating a new reload.
 	}
 
 	return (

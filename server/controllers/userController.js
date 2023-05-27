@@ -30,6 +30,7 @@ const loginUser = async (req, res) => {
     }
 }
 
+//^ Controller to sign up a user
 const signupUser = async (req, res) => {
     const {email, password} = req.body
 
@@ -43,8 +44,6 @@ const signupUser = async (req, res) => {
         //^ Creates the JWT Token
         const token = createToken(user._id)
 
-
-
         res.status(200).json({email, token, admin, permissions})
     }
 
@@ -54,7 +53,7 @@ const signupUser = async (req, res) => {
     }
 }
 
-//^ Controller which will GET all users
+//^ Controller which will GET all users 
 const getUsers = async (req, res) => {
     try {
         const users = await User.find({})
@@ -62,14 +61,11 @@ const getUsers = async (req, res) => {
         
     } catch (error) {
         res.status(400).json({error: error.message})
-        
     }
-
 }
+
 //^ Controller which will Edit all users
 const editUser = async (req, res) => {
-    console.log("PUT")
-
     const {id} = req.params
     const test = mongoose.Types.ObjectId.isValid(id)
     console.log(test)
@@ -81,7 +77,6 @@ const editUser = async (req, res) => {
     } catch (error) {
         console.log(error)
         res.status(400).json({error: error.message})
-        
     }
 
 }

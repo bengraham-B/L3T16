@@ -4,8 +4,6 @@ import { Link } from 'react-router-dom'
 export default function Home() {
 	//^ This state is used to set the total number of reloads the user has
 	const [allReloads, setAllReloads] = useState([])
-	const [token, setToken] = useState()
-	const [permissions, setPermissions] = useState()
 	const [admin, setAdmin] = useState() //^ Stores the user's admin status
 
 	useEffect(() => {
@@ -23,7 +21,7 @@ export default function Home() {
 			setAllReloads(data.length) //^ Setting the length of the reloads array from the DB to state, by counting the length of the array where the response is stored
 		}
 		const userJWT = JSON.parse(localStorage.getItem('goose-reloaded-user'))
-		setToken(userJWT)
+
 
 		// console.log(data)
 		if(localStorage.getItem('goose-reloaded-user')){
@@ -32,8 +30,6 @@ export default function Home() {
 
 			const object = JSON.parse(localStorage.getItem("goose-reloaded-user"))
 			setAdmin(object.admin) //^ Saves the user's admin status to state.
-			setPermissions(object.permissions)
-			console.log(object.permissions)
 
 		}
 
