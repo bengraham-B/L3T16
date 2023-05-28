@@ -44,9 +44,7 @@ export default function App() {
 
 				<div className="pages">
 
-					{console.log(permissions)}
-					{console.log(user)}
-
+					
 					<Routes>
 
 						{/* This will check to if the user is signed up and will then check if they have the permission to use the site. */}
