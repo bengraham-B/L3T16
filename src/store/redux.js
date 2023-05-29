@@ -41,7 +41,12 @@ export const reduxSlice = createSlice({
 
         },
         refreshCount: (state) => {
-            state.refreshCountValue = state.refreshCountValue + 1
+            // state.refreshCountValue = state.refreshCountValue + 1
+            return {
+                ...state,
+                refreshCountValue: state.refreshCountValue + 1
+            }
+            console.log(state.refreshCountValue)
         }
 
     }

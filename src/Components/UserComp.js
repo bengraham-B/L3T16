@@ -6,13 +6,9 @@ import { refreshCount } from '../store/redux'
 
 export default function UserComp(props) {
 
-
     const refreshCountValue = useSelector((state) => state.redux.refreshCountValue) //~ Getting the refreshCountValue value from Redux State
 
-
     const dispatch = useDispatch()
-
-    console.log(props.permissions)
 
     const [permissionsStatus, setPermissionsStatus] = useState() //^ Stores the permissions status of the user in state
     const [permissionsText, setPermissionsText] = useState() //^ Stores the permissions status of the user in state
@@ -22,6 +18,8 @@ export default function UserComp(props) {
     
     const [userEmail, setuserEmail] = useState() //^ Stores the email of the current user, which will be used to highlight their account.
     const [userEmailCheck, setuserEmailCheck] = useState() //^ If the email is true it will store true and will be used to highlight the user account in the list.
+
+    const [count, setCount] = useState(0)
 
 
 
@@ -37,9 +35,14 @@ export default function UserComp(props) {
             })
         })
 
+        dispatch(refreshCount())
+        setCount(count + 1)
         const data = await response.json()
         console.log(data)
-        dispatch(refreshCount())
+
+        //^ State would not update after the first click of a button, so window.location.assign("/user")  is
+        //^ used to create a hard refresh of the page.
+        window.location.assign("/user") 
     }
     
     //^ This functional will handle the request to enable and disable a user's account
@@ -55,18 +58,14 @@ export default function UserComp(props) {
         })
 
         const data = await response.json()
-        console.log(data)
         dispatch(refreshCount())
+        setCount(count + 1)
+
+        //^ State would not update after the first click of a button, so window.location.assign("/user")  is
+        //^ used to create a hard refresh of the page.
+        window.location.assign("/user") 
     }
 
-    useEffect(() => {
-        if(props.permissions){
-            setPermissionsText("Enabled")
-        } else {
-            setPermissionsText("Disabled")
-        }
-      
-    }, [])
     
 
     //^ If the user is an Admin, the word 'admin' will appear under email. 
@@ -97,7 +96,7 @@ export default function UserComp(props) {
             setuserEmailCheck(false)
         }
 
-    }, [refreshCountValue, adminStatus, permissionsStatus]) //~ Using the refreshCountValue to update the UI every time a user presses a button.
+    }, [count, refreshCountValue, adminStatus, permissionsStatus]) //~ Using the refreshCountValue to update the UI every time a user presses a button.
 
 
   return (
@@ -129,7 +128,6 @@ export default function UserComp(props) {
             </div>
 
             <div className="button-container">
-                {console.log(permissionsStatus)}
 
                 {adminStatus ? <button onClick={() => handleMakeAdmin(props._id, props.admin)}>Remove Admin</button> : <button onClick={() => handleMakeAdmin(props._id, props.admin)}>Make Admin</button>}
                 {permissionsStatus ? <button onClick={() => handleChangePermissions(props._id, props.permissions)}>Disable Account</button> : <button onClick={() => handleChangePermissions(props._id, props.permissions)}>Enable Account</button>}
