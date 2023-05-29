@@ -73,12 +73,16 @@ export default function AddGun() {
 				postReload(userToken)
 			}
 			dispatch(refreshCount)
+			window.location.assign("/gun/gun") //! if the user successfully adds a reload they will be asigned to the home page.
 		}
+
 
 		//^ The error if the user is unable to connect to the server.
 		catch(err) {
 			console.log(err.message)
 		}
+
+
 	}
 
 	//^ This allows the user to cancel adding a reload and go back to the gun page.

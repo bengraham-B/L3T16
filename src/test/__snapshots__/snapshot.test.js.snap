@@ -7,15 +7,7 @@ exports[`renders Navbar correctly 1`] = `
   >
     <div
       class="home-container"
-    >
-      <a
-        href="/"
-      >
-        <h2>
-          Home
-        </h2>
-      </a>
-    </div>
+    />
     <div
       class="title-container"
     >

@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+// const { Link }= require("react-router-dom")
+
+// const React = require("react")
+// const { useEffect, useState} = require("react")
 
 export default function Home() {
 	//^ This state is used to set the total number of reloads the user has
