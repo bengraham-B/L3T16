@@ -5,7 +5,7 @@ GOOSE_RELOADED is a website which allows users to save data regarding their relo
 
 Firstly a user will need to login or signup, where they will be directed to the home page which shows their total reloads and a button which will allow them to to go to their relad page. 
 
-On the reload page is the total amount of reloads the user has and the button to add more a new reload. The reload button will navigate the user to a form, in which they can input their reloading data.
+On the reload page is the total amount of reloads the user has and the button to add more a new reload. The reload button will navigate the user to a form, in which they can input all their reloading data.
 
 ---
 
