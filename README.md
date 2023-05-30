@@ -56,6 +56,8 @@ Vercel: https://l3-t16.vercel.app/auth/login
 
 Postman: https://www.postman.com/dark-astronaut-547911/workspace/hyperiondev-level-3/collection/26299671-80d66138-73e3-45ba-9e3f-05a65bf3e88f
 
+Deployment: https://goose-reloaded-frontend.vercel.app/auth/login
+
 Draw.io wireframe: https://app.diagrams.net/#Hbengraham-B%2FL3T16%2Fmain%2FGOOSE_RELOADED%20Diagram.drawio
 
 Redarding the deployment of the app, I was told that it is nologer a requirement for the task. 
