@@ -42,6 +42,15 @@ export default function Home() {
 		
 		<div className="header">Home</div>
 
+		<div className="para-info-container">
+			<p>
+				This site will allow you to record your reloading data parameters, which will include 
+				data regarding your calibre, bullet head, cartridge, powder and primer. You will be able to update 
+				and delete information in order to create your own personal collection of reloading parameters.
+			</p>
+
+		</div>
+
 		<dvi className="comp-container">
 			<div className="wrapper">
 
@@ -53,8 +62,9 @@ export default function Home() {
 				<div className="container handgun">
 					<h3>Handgun</h3>
 					<button>
-						<Link to="/gun/gun">Add Reload</Link>
+						<Link to="/gun/gun">Reloads</Link>
 					</button>
+					<p>Show All reloads</p>
 				</div>
 
 				{/* 
@@ -67,6 +77,7 @@ export default function Home() {
 						<button>
 							<Link to="/user">Users</Link>
 						</button>
+							<p>Show all Users</p>
 					</div>
 				:
 					<></>

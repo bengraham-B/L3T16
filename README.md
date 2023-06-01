@@ -1,16 +1,37 @@
-# `GOOSE_RELOADED`
+# GOOSE_RELOADED
 
-## How to user the App
-GOOSE_RELOADED is a website which allows users to save data regarding their reload parameters.
+## How to Use the App
 
-Firstly a user will need to login or signup, where they will be directed to the home page, which shows their total reloads and a button which will allow them to to go to their relad page. 
+GOOSE_RELOADED is a website that allows users to save data regarding their reload parameters, update their current data, and delete any reloads the user no longer requires. This will allow users to track and improve their overall shooting performance.
 
-On the reload page is the total amount of reloads the user has and the button to add more a new reload. The reload button will navigate the user to a form, in which they can input all their reloading data.
+## Reload Parameters
+
+Reload parameters will include:
+
+- Bullet Head
+  - Size
+  - Type
+  - Make
+
+- Cartridge
+  - Size
+  - Type
+  - Make
+
+- Powder
+  - Make
+
+- Primer
+  - Make
+
+Firstly, a user will need to login or signup, where they will be directed to the home page, which shows their total reloads and a button that will allow them to go to their reload page.
+
+On the reload page, the total number of reloads the user has is displayed along with a button to add a new reload. Clicking the reload button will navigate the user to a form where they can input all their reloading data.
 
 ---
 
 ## To run the app on your local machine
-### To run the fontend
+### To run the frontend
 ```
 npm start
 ```
@@ -22,47 +43,48 @@ npm start
 ```
 
 ---
-## Security measures
+
+## Security Measures
+
 Helmet.js has been used on the server to add an extra layer of protection.
 
-With regard to storing user's passwords, they are hashed using the bycrptjs libary, which will ensure in the case of a data beach, user's will have enough time to change their passwords.
+With regard to storing user's passwords, they are hashed using the bcryptjs library, which ensures that in the case of a data breach, users will have enough time to change their passwords.
 
 ---
+
 ## Backend Deployment
-The back end has been deployed along side the frontend on to Vercel.
 
-This will allow for a simple deployment, it will have imporved preformance as there will be less latency when users make requests to the server, due to data traveling with in the server, oppsed to over the internet and the front and backend can communicate direclty with each other as they do not need to go through API's or external networks.
+The backend has been deployed alongside the frontend on Vercel.
 
-___
+This allows for simple deployment and improved performance as there will be less latency when users make requests to the server. Data travels within the server, reducing the need to go over the internet. The frontend and backend can communicate directly with each other without going through APIs or external networks.
 
-## Admin user
-user name: adminuser@gmail.com
+---
 
-password: #Workz123
+## Admin User
 
-This will allow you to see the admin access of the application
+- Username: adminuser@gmail.com
+- Password: #Workz123
 
-## Normal user
-user name: normaluser@gmail.com
+This will allow you to access the admin features of the application.
 
-password: Mhip178!
+## Normal User
 
-___
+- Username: normaluser@gmail.com
+- Password: Mhip178!
+
+---
 
 ## Links
-Github: https://github.com/bengraham-B/L3T16
 
-Vercel: https://l3-t16.vercel.app/auth/login
+- GitHub: [https://github.com/bengraham-B/L3T16](https://github.com/bengraham-B/L3T16)
+- Vercel: [https://l3-t16.vercel.app/auth/login](https://l3-t16.vercel.app/auth/login)
+- Postman: [https://www.postman.com/dark-astronaut-547911/workspace/hyperiondev-level-3/collection/26299671-80d66138-73e3-45ba-9e3f-05a65bf3e88f](https://www.postman.com/dark-astronaut-547911/workspace/hyperiondev-level-3/collection/26299671-80d66138-73e3-45ba-9e3f-05a65bf3e88f)
+- Draw.io Wireframe: [https://app.diagrams.net/#Hbengraham-B%2FL3T16%2Fmain%2FGOOSE_RELOADED%20Diagram.drawio](https://app.diagrams.net/#Hbengraham-B%2FL3T16%2Fmain%2FGOOSE_RELOADED%20Diagram.drawio)
 
-Postman: https://www.postman.com/dark-astronaut-547911/workspace/hyperiondev-level-3/collection/26299671-80d66138-73e3-45ba-9e3f-05a65bf3e88f
+Regarding the deployment of the app, I was told that it is no longer a requirement for the task.
 
-Draw.io wireframe: https://app.diagrams.net/#Hbengraham-B%2FL3T16%2Fmain%2FGOOSE_RELOADED%20Diagram.drawio
-
-Redarding the deployment of the app, I was told that it is nologer a requirement for the task. 
-
-
-___
+---
 
 ## MongoDB
-The databse is GOOSE_RELOADED
 
+The database used is GOOSE_RELOADED.

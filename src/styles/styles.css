@@ -6,17 +6,37 @@
 }
 
 #Login-Signup-form {
-  width: 100%;
-  min-height: 100vh;
-  max-height: auto;
   background: rgba(0, 0, 0, 0.1);
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+#Login-Signup-form .top {
+  height: auto;
+  margin: 20px;
+}
+#Login-Signup-form .top .para-info-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  text-align: center;
+}
+#Login-Signup-form .top .para-info-container h3 {
+  width: 50%;
+}
+#Login-Signup-form .bottom {
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   font-family: "Poppins";
 }
-#Login-Signup-form .form-container {
+#Login-Signup-form .bottom .form-container {
   padding: 20px;
   width: 350px;
   height: 400px;
@@ -28,23 +48,23 @@
   flex-direction: column;
   background: white;
 }
-#Login-Signup-form .form-container .title-container {
+#Login-Signup-form .bottom .form-container .title-container {
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-#Login-Signup-form .form-container .input-container {
+#Login-Signup-form .bottom .form-container .input-container {
   width: 100%;
 }
-#Login-Signup-form .form-container .input-container input {
+#Login-Signup-form .bottom .form-container .input-container input {
   width: 300px;
   font-size: 21px;
   padding-left: 5px;
   border-radius: 5px;
   border: black 1px solid;
 }
-#Login-Signup-form .form-container .input-container .email-wrapper {
+#Login-Signup-form .bottom .form-container .input-container .email-wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -52,7 +72,7 @@
   width: 100%;
   margin: 25px 0 25px;
 }
-#Login-Signup-form .form-container .input-container .password-wrapper {
+#Login-Signup-form .bottom .form-container .input-container .password-wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -60,14 +80,14 @@
   width: 100%;
   margin: 25px 0 25px;
 }
-#Login-Signup-form .form-container .button-container {
+#Login-Signup-form .bottom .form-container .button-container {
   width: 100%;
   height: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-#Login-Signup-form .form-container .button-container button {
+#Login-Signup-form .bottom .form-container .button-container button {
   width: 300px;
   font-size: 21px;
   background: blue;
@@ -76,7 +96,7 @@
   border-radius: 5px;
   padding: 5px;
 }
-#Login-Signup-form .form-container .error-container {
+#Login-Signup-form .bottom .form-container .error-container {
   width: auto;
   height: auto;
   background: rgba(255, 0, 0, 0.2);
@@ -85,16 +105,16 @@
   padding: 15px;
   margin: 5px;
 }
-#Login-Signup-form .form-container .error-container h4 {
+#Login-Signup-form .bottom .form-container .error-container h4 {
   font-size: 21px;
   color: red;
   text-align: center;
 }
-#Login-Signup-form .text-container {
+#Login-Signup-form .bottom .text-container {
   margin: 20px;
   font-size: 1.2em;
 }
-#Login-Signup-form .text-container strong {
+#Login-Signup-form .bottom .text-container strong {
   color: blue;
 }
 
@@ -239,6 +259,19 @@
   align-items: center;
   justify-content: center;
   font-size: 31px;
+}
+#HomePage .para-info-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: -60px;
+}
+#HomePage .para-info-container p {
+  width: 50%;
 }
 #HomePage .comp-container {
   display: flex;

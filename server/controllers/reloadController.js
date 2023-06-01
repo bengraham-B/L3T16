@@ -42,8 +42,6 @@ const get_all_reloads = async (req, res) => {
 const post_reload =  async (req, res) => {
     const id = req.user._id
     const email = req.user.email
-
-    console.log(req.user.email, "fffffffffjfjfjfjfjfj")
    
     const reload_post = await Reload.create({ 
         user_email: email,

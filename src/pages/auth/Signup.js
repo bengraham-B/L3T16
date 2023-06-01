@@ -7,6 +7,7 @@ export default function Signup() {
     const [error, setError] = useState()
 
     const handleSignup = async () => {
+        console.log("Sign Up")
         setError(null) //^ When the user logins in for the first time their should not be an error and after a failed attempt it will remove the previous error message.
 
         try {
@@ -44,38 +45,53 @@ export default function Signup() {
     return (
         <div id="Login-Signup-form">
 
-            <div className="form-container">
+            <div className="top">
+                <div className="para-info-container">
+                    <h3>
+                        This site will allow you to record your reloading data parameters, which will include 
+                        data regarding your calibre, bullet head, cartridge, powder and primer. You will be able to update 
+                        and delete information in order to create your own personal collection of reloading parameters.
+                    </h3>
 
-                <div className="title-container">
-                    <h1>Sign Up</h1>
                 </div>
-
-                <div className="input-container">
-                    <div className="email-wrapper">
-                        <h2>Email</h2>
-                        <input type="text" onChange={(e) => setEmail(e.target.value)}/>
-                    </div>
-                    <div className="password-wrapper">
-                        <h2>Password</h2>
-                        <input type="password" onChange={(e) => setPassword(e.target.value)}/>
-                    </div>
-                </div>
-
-                <div className="button-container">
-                    <button onClick={handleSignup}>Sign Up</button>
-                </div>
-
-                {error && <div className="error-container">
-                    <div>
-                         <h4>{error}</h4>
-                    </div>
-                </div>}
             </div>
 
-            <div className="text-container">
-                {/* This link will allow the user to go to the Login page */}
-                <p>Already a member, <Link to="/auth/Login"> Login.</Link></p>
+            <div className="bottom">
+                <div className="form-container">
+
+                    <div className="title-container">
+                        <h1>Sign Up</h1>
+                    </div>
+
+                    <div className="input-container">
+                        <div className="email-wrapper">
+                            <h2>Email</h2>
+                            <input type="text" onChange={(e) => setEmail(e.target.value)}/>
+                        </div>
+                        <div className="password-wrapper">
+                            <h2>Password</h2>
+                            <input type="password" onChange={(e) => setPassword(e.target.value)}/>
+                        </div>
+                    </div>
+
+                    <div className="button-container">
+                        <button onClick={handleSignup}>Sign Up</button>
+                    </div>
+
+                    {error && <div className="error-container">
+                        <div>
+                            <h4>{error}</h4>
+                        </div>
+                    </div>}
+                </div>
+
+                <div className="text-container">
+                    {/* This link will allow the user to go to the Login page */}
+                    <p>Already a member, <Link to="/auth/Login"> Login.</Link></p>
+                </div>
             </div>
+
+
 
         </div>
     )

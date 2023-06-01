@@ -1,0 +1,16 @@
+Added snapshot and unit test screen shots to "screenshots_test" folder
+
+
+User login credentials
+    Admin user
+    user name: adminuser@gmail.com
+    password: #Workz123
+    This will allow you to see the admin access of the application
+    
+    Normal user
+    user name: normaluser@gmail.com
+    password: Mhip178!
+
+Updated the spelling errors on the readme file.
+
+Add more information to the UI as mentioned in the review.

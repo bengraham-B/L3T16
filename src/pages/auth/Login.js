@@ -45,38 +45,52 @@ export default function Login() {
     return (
         <div id="Login-Signup-form">
 
-            <div className="form-container">
+            <div className="top">
+                <div className="para-info-container">
+                    <h3>
+                        This site will allow you to record your reloading data parameters, which will include 
+                        data regarding your calibre, bullet head, cartridge, powder and primer. You will be able to update 
+                        and delete information in order to create your own personal collection of reloading parameters.
+                    </h3>
 
-                <div className="title-container">
-                    <h1>Login</h1>
                 </div>
-
-                <div className="input-container">
-                    <div className="email-wrapper">
-                        <h2>Email</h2>
-                        <input type="text" onChange={(e) => setEmail(e.target.value)}/>
-                    </div>
-                    <div className="password-wrapper">
-                        <h2>Password</h2>
-                        <input type="password" onChange={(e) => setPassword(e.target.value)}/>
-                    </div>
-                </div>
-
-                <div className="button-container">
-                    <button onClick={handleLogin}>Login</button>
-                </div>
-
-                {error && <div className="error-container">
-                    <div>
-                         <h4>{error}</h4>
-                    </div>
-                </div>}
             </div>
 
-            <div className="text-container">
-                {/* This link will allow the user to go to the Signup page  */}
-                 <p>Not yet a member yet, <Link to="/auth/Signup"> Signup.</Link></p>
+            <div className="bottom">
+                <div className="form-container">
+
+                    <div className="title-container">
+                        <h1>Login</h1>
+                    </div>
+
+                    <div className="input-container">
+                        <div className="email-wrapper">
+                            <h2>Email</h2>
+                            <input type="text" onChange={(e) => setEmail(e.target.value)}/>
+                        </div>
+                        <div className="password-wrapper">
+                            <h2>Password</h2>
+                            <input type="password" onChange={(e) => setPassword(e.target.value)}/>
+                        </div>
+                    </div>
+
+                    <div className="button-container">
+                        <button onClick={handleLogin}>Login</button>
+                    </div>
+
+                    {error && <div className="error-container">
+                        <div>
+                            <h4>{error}</h4>
+                        </div>
+                    </div>}
+                </div>
+
+                <div className="text-container">
+                    {/* This link will allow the user to go to the Signup page  */}
+                    <p>Not yet a member yet, <Link to="/auth/Signup"> Signup.</Link></p>
+                </div>
             </div>
+
 
         </div>
     )
