@@ -83,18 +83,17 @@ This will allow you to access the admin features of the application.
 
 Regarding the deployment of the app, I was told that it is no longer a requirement for the task.
 
-<<<<<<< HEAD
 ---
-=======
+ 
 Deployment: https://goose-reloaded-frontend.vercel.app/auth/login
 
 Draw.io wireframe: https://app.diagrams.net/#Hbengraham-B%2FL3T16%2Fmain%2FGOOSE_RELOADED%20Diagram.drawio
 
-Redarding the deployment of the app, I was told that it is nologer a requirement for the task. 
+Regarding the deployment of the app, I was told that it is no longer a requirement for the task. 
 
 
 ___
->>>>>>> 9cfec9c5e088f3646b5a05d24c7bd77c0787b962
+
 
 ## MongoDB
 
